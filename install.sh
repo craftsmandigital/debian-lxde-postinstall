@@ -1,6 +1,14 @@
 # How to install Chrome browser properly via command line? 
 # https://askubuntu.com/questions/991583/how-to-install-google-chrome-from-terminal
 
+#### Variables ####
+
+EMAIL=htcjon10@gmail.com
+GIT_USERNAME="Jon Arne"
+
+
+
+
 echo "===> Installing google-chrome ..."
 # add the google-chrome repository to Ubuntu.
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
@@ -10,6 +18,11 @@ sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable
 sudo apt update -y
 
 sudo apt install -y google-chrome-stable
+
+
+
+
+
 
 
 
@@ -38,6 +51,32 @@ echo "===> Innstall vsCode extention Sync ..."
 code --install-extension Shan.code-settings-sync
 # watch this for sync settings
 # https://docs.google.com/document/d/1myP5xBDmIM5R5VI8Dp3dEyH6iJL3kk8Uu4_NL49SKow/edit
+
+echo "===> Initialising git configuration ..."
+# Initialising git
+git config --global user.name $GIT_USERNAME
+git config --global user.email $EMAIL
+
+
+
+
+
+
+
+echo "===> Installing hugo ..."
+# Installing hugo
+# https://gohugo.io/getting-started/installing/#snap-package
+
+# In any of the Linux distributions that support snaps, you may install install the “extended” Sass/SCSS version with this command:
+#snap install hugo --channel=extended
+
+# To install the non-extended version without Sass/SCSS support:
+sudo snap install hugo
+# To switch between the two, use either snap refresh hugo --channel=extended or snap refresh hugo --channel=stable.
+
+
+
+
 
 
 # inital git structure
@@ -123,15 +162,6 @@ lsblk -f    # remove swap things after comparing output of the comands
 
 
 
-# Installing hugo
-# https://gohugo.io/getting-started/installing/#snap-package
-
-# In any of the Linux distributions that support snaps, you may install install the “extended” Sass/SCSS version with this command:
-#snap install hugo --channel=extended
-
-# To install the non-extended version without Sass/SCSS support:
-snap install hugo
-# To switch between the two, use either snap refresh hugo --channel=extended or snap refresh hugo --channel=stable.
 
 
 
