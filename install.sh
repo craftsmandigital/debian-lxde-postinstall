@@ -226,6 +226,8 @@ sudo apt install -y rename
 
 
 
+# chortcutt file
+# /home/jon/.config/lxqt/globalkeyshortcuts.confsf
 
 
 # # Limit a gui program in Linux to only one instance
