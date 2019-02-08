@@ -131,30 +131,21 @@ sudo snap install hugo
 
 
 
-echo "---------------------------------------------------------------------------"
-echo "---------------------------------------------------------------------------"
-echo "---------------------------------------------------------------------------"
-echo "---------------------------------------------------------------------------"
-echo "---------------------------------------------------------------------------"
-echo "---------------------------------------------------------------------------"
-echo "---------------------------------------------------------------------------"
-echo "---------------------------------------------------------------------------"
-echo "---------------------------------------------------------------------------"
-echo "---------------------------------------------------------------------------"
-echo "===> Install Swapp esc and caps..."
-# inital git structure
 
-cd ~/git_projects/installs/linux-postinstall
-
-# Svapp caps and esc
-# http://xahlee.info/linux/linux_swap_capslock_esc_key.html
-
-# xmodmap ~/.Xmodmap
-
-
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "===> Install space2ctrl ..."
 # Setteing up space2ctrl
 # https://github.com/r0adrunner/Space2Ctrl
-sudo apt-get install libx11-dev libxtst-dev
+sudo apt-get install -y libx11-dev libxtst-dev
 
 cd ~/git_projects/installs
 git clone https://github.com/r0adrunner/Space2Ctrl.git
@@ -163,26 +154,104 @@ cd Space2Ctrl
 make
 sudo make install
 
-s2cctl start # Starting upp space2ctrl
+# s2cctl start # Starting upp space2ctrl
 
 # adding s2cctl to startup
 # set up s2cctl in
 # menu->Preferences->LXQt settings->Session Settings->Autostart->LXQt Autostart-> Add
 # download this file to also switch caps and esc and add it https://github.com/hackingjack/configuration-files/blob/master/keyboard-config.sh
 
+
+
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "===> Install touchpad indicator"
 # Disable touchpad while mouse is connected
 # https://askubuntu.com/questions/1053098/touchpad-settings-not-found-for-lubuntu-18-04
-sudo add-apt-repository ppa:atareao/atareao
-sudo apt-get update
-sudo apt-get install touchpad-indicator
+sudo add-apt-repository -y ppa:atareao/atareao
+sudo apt-get -y update
+sudo apt-get install -y touchpad-indicator
 
-touchpad-indicator # this last command starts the app
+# touchpad-indicator # this last command starts the app
 
 # adding touchpad-indicator to startup
 # set up touchpad-indicator in
 # menu->Preferences->LXQt settings->Session Settings->Autostart->LXQt Autostart-> Add
 # type inn the path to touchpad-indicator
 
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "===> Install Swapp esc and caps and other autostart tasks ..."
+# Svapp caps and esc
+# http://xahlee.info/linux/linux_swap_capslock_esc_key.html
+
+# xmodmap ~/.Xmodmap
+
+# copy all autostart tasks to autostart folder
+cp ~/git_projects/installs/linux-postinstall/desktop-items/* ~/.config/autostart
+
+
+
+
+
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------"
+echo "===> Install mics ..."
+sudo apt install -y rename
+
+
+
+
+
+# # Limit a gui program in Linux to only one instance
+# # https://superuser.com/questions/170937/limit-a-gui-program-in-linux-to-only-one-instance
+# # https://www.howtoinstall.co/en/ubuntu/xenial/wmctrl
+# sudo apt-get update
+# sudo apt-get install wmctrl
+
+# # I created a executable file /usr/local/bin/run_once.sh containing
+
+# #! /bin/bash
+# application=$1
+# if wmctrl -xl | grep "${application}" > /dev/null ; then
+#     # Already running, raising to front
+#     wmctrl -x -R "$application"
+# else
+#     # Not running: starting
+#     $@
+# fi
+
+
+
+
+# # speed up boot
+# # https://superuser.com/questions/972355/what-needs-to-run-to-stop-the-start-job-dev-disk-by-check-on-each-boot
+# cat /etc/fstab
+# lsblk -f    # remove swap things after comparing output of the comands
 
 
 
@@ -190,52 +259,20 @@ touchpad-indicator # this last command starts the app
 
 
 
-# Limit a gui program in Linux to only one instance
-# https://superuser.com/questions/170937/limit-a-gui-program-in-linux-to-only-one-instance
-# https://www.howtoinstall.co/en/ubuntu/xenial/wmctrl
-sudo apt-get update
-sudo apt-get install wmctrl
-
-# I created a executable file /usr/local/bin/run_once.sh containing
-
-#! /bin/bash
-application=$1
-if wmctrl -xl | grep "${application}" > /dev/null ; then
-    # Already running, raising to front
-    wmctrl -x -R "$application"
-else
-    # Not running: starting
-    $@
-fi
-
-
-
-
-# speed up boot
-# https://superuser.com/questions/972355/what-needs-to-run-to-stop-the-start-job-dev-disk-by-check-on-each-boot
-cat /etc/fstab
-lsblk -f    # remove swap things after comparing output of the comands
 
 
 
 
 
 
+# # Post install tasks
 
-
-
-
-
-
-
-# Post install tasks
-
-# Setting a google user for my Job account
-# https://superuser.com/questions/377186/how-do-i-start-chrome-using-a-specified-user-profile
-google-chrome-stable --profile-directory=Jobb
-# this command vil also launch my profile in a shortcutt
-# create a new blank file (Chrome job.sh) in the desktop and add this
-#!/bin/sh
-google-chrome-stable --profile-directory=Jobb
-# Rightclick on the file and make it executable
+# # Setting a google user for my Job account
+# # https://superuser.com/questions/377186/how-do-i-start-chrome-using-a-specified-user-profile
+# google-chrome-stable --profile-directory=Jobb
+# # this command vil also launch my profile in a shortcutt
+# # create a new blank file (Chrome job.sh) in the desktop and add this
+# #!/bin/sh
+# google-chrome-stable --profile-directory=Jobb
+# # Rightclick on the file and make it executable
 
