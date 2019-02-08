@@ -52,12 +52,24 @@ code --install-extension Shan.code-settings-sync
 # watch this for sync settings
 # https://docs.google.com/document/d/1myP5xBDmIM5R5VI8Dp3dEyH6iJL3kk8Uu4_NL49SKow/edit
 
+
+
+
+
+
+
+
 echo "===> Initialising git configuration ..."
 # Initialising git
 git config --global user.name $GIT_USERNAME
 git config --global user.email $EMAIL
 
+# Set git to use the credential memory cache
+git config --global credential.helper cache
 
+# To change the default password cache timeout, enter the following:
+git config --global credential.helper 'cache --timeout=36000'
+# Set the cache to timeout after 10 hour (setting is in seconds)
 
 
 
