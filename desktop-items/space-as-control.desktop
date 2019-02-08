@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/home/jon/git_projects/installs/Space2Ctrl/s2cctl start
+Name=space-as-control
+OnlyShowIn=LXQt;
+Type=Application
+Version=1.0
+X-LXQt-Need-Tray=true
