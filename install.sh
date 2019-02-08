@@ -204,6 +204,7 @@ echo "===> Install Swapp esc and caps and other autostart tasks ..."
 # xmodmap ~/.Xmodmap
 
 # copy all autostart tasks to autostart folder
+mkdir ~/.config/autostart
 cp ~/git_projects/installs/linux-postinstall/desktop-items/* ~/.config/autostart
 
 
