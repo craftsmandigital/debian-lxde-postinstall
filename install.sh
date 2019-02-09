@@ -227,8 +227,9 @@ sudo apt install -y rename
 
 
 # chortcutt file
-# /home/jon/.config/lxqt/globalkeyshortcuts.confsf
-
+# ~/.config/lxqt/globalkeyshortcuts.conf
+# add personal keyboard chortcuts to the systems chortcutfile
+cat ./keyboard_shortcuts.conf >> ~/.config/lxqt/globalkeyshortcuts.conf
 
 # # Limit a gui program in Linux to only one instance
 # # https://superuser.com/questions/170937/limit-a-gui-program-in-linux-to-only-one-instance
