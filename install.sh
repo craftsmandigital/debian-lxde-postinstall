@@ -195,18 +195,6 @@ cat ./keyboard_shortcuts.conf >> ~/.config/lxqt/globalkeyshortcuts.conf
 
 # # Post install tasks
 
-# # Setting a google user for my Job account
-# # https://superuser.com/questions/377186/how-do-i-start-chrome-using-a-specified-user-profile
-# google-chrome-stable --profile-directory=Jobb
-# # this command vil also launch my profile in a shortcutt
-# # create a new blank file (Chrome job.sh) in the desktop and add this
-# #!/bin/sh
-# google-chrome-stable --profile-directory=Jobb
-# # Rightclick on the file and make it executable
-
-
-
-
 
 # Adding the norwegian language
 #       - Start --> Preferences --> LXQT settings --> Keyboard and mouse --> Keyboard and layout
@@ -239,3 +227,27 @@ cat ./keyboard_shortcuts.conf >> ~/.config/lxqt/globalkeyshortcuts.conf
 #        - press Shift+Alt+d (this vil import your personal vscode settings. Settings sync extention is already installed) 
 #        - Copy gist id and secret credentical from this document 
 #        - https://docs.google.com/document/d/1myP5xBDmIM5R5VI8Dp3dEyH6iJL3kk8Uu4_NL49SKow/edit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Setting a google user for my Job account
+# # https://superuser.com/questions/377186/how-do-i-start-chrome-using-a-specified-user-profile
+# google-chrome-stable --profile-directory=Jobb
+# # this command vil also launch my profile in a shortcutt
+# # create a new blank file (Chrome job.sh) in the desktop and add this
+# #!/bin/sh
+# google-chrome-stable --profile-directory=Jobb
+# # Rightclick on the file and make it executable

@@ -2,32 +2,36 @@
 Innstallation of all my personal apps and configuration. after a Lubuntu install
 
 ## First clone install repo.
-The commands under vil do the nesesary stuff, clone and take you to the rigt folder to start an instalation
+The commands under vil do the nesesary stuff, clone and take you to the rigt folder to start an instalation. Copy and paste it into the terminal, hit enter.
 
 ```
 cd ~ && mkdir git_projects && cd git_projects && mkdir installs && cd installs && git clone https://github.com/hackingjack/linux-postinstall.git && cd linux-postinstall
 
 ```
+## Second run the instalation script
+```
+sudo init.sh
+```
+
+## Third post install Manual tasks
+
+### Adding the norwegian language
+- Start --> Preferences --> LXQT settings --> Keyboard and mouse --> Keyboard and layout
+- press add button, chose norwegian  
+- chose both shift as shortcutt
 
 
-## Post install Manual tasks
 
-- Adding the norwegian language
-    - Start --> Preferences --> LXQT settings --> Keyboard and mouse --> Keyboard and layout
-    - press add button, chose norwegian  
-    - chose both shift as shortcutt
+### Changing google chrome to default web browser
 
-
-
-## Changing google chrome to default web browser
 - Start --> Preferences --> LXQT settings --> Session settings --> Default applications
-    - set Web browser = google-chrome-stable
-    - Go to html, jpg, gif files in file manager and rigtclick and shoose default app
+ - set Web browser = google-chrome-stable
+ - Go to html, jpg, gif files in file manager and rigtclick and shoose default app
 
 
 
 
-## finish google crome settings
+### finish google crome settings
 Use the shortcuts to start google chrome
 - Ctrl+Alt+g (Default user) --> 
     - Install lastpass
@@ -38,7 +42,7 @@ Use the shortcuts to start google chrome
     - Synscronise and gett the rest off your setup (Copy password from lastpass on default user)
 
 
-## Finish vscode  settings
+### Finish vscode  settings
  use the shortcuts to start vscode
  - Ctrl+Alt+c --> 
  - press Shift+Alt+d (this vil import your personal vscode settings. Settings sync extention is already installed) 
