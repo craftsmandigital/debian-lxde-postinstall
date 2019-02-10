@@ -25,11 +25,6 @@ sudo apt install -y google-chrome-stable
 
 
 
-
-
-
-
-
 yes "________________________________________________________________________" | head -n 10
 # This sequence of code innstalls latest version of vsCode from commandline
 # https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-18-04/
@@ -53,8 +48,6 @@ echo "===> Innstall vsCode extention Sync ..."
 code --install-extension Shan.code-settings-sync
 # watch this for sync settings
 # https://docs.google.com/document/d/1myP5xBDmIM5R5VI8Dp3dEyH6iJL3kk8Uu4_NL49SKow/edit
-
-
 
 
 
@@ -94,8 +87,6 @@ echo "===> Installing hugo ..."
 # To install the non-extended version without Sass/SCSS support:
 sudo snap install hugo
 # To switch between the two, use either snap refresh hugo --channel=extended or snap refresh hugo --channel=stable.
-
-
 
 
 
@@ -213,3 +204,7 @@ cat ./keyboard_shortcuts.conf >> ~/.config/lxqt/globalkeyshortcuts.conf
 # google-chrome-stable --profile-directory=Jobb
 # # Rightclick on the file and make it executable
 
+# Changing google chrome to default web browser
+#       - Start --> Preferences --> LXQT settings --> Session settings --> Default applications
+#         set Web browser = google-chrome-stable
+#       - Go to html, jpg, gif files in file manager and rigtclick and shoose default app
