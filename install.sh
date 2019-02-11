@@ -141,13 +141,17 @@ mkdir ~/.config/autostart
 cp ~/git_projects/installs/linux-postinstall/desktop-items/* ~/.config/autostart
 
 
+
+
 yes "________________________________________________________________________" | head -n 10
 echo "===> Install Stretc break software
-wget --directory-prefix=$DOWNLOAD_FOLDER --no-check-certificate https://github.com/hovancik/stretchly/releases/download/v0.17.0/stretchly_0.17.0_amd64.deb
+wget --directory-prefix=$DOWNLOAD_FOLDER --no-check-certificate https://github.com/hovancik/stretchly/releases/download/v0.19.0/stretchly_0.19.0_amd64.deb
 
-sudo dpkg -i $DOWNLOAD_FOLDER/stretchly_0.17.0_amd64.deb -y
+sudo dpkg -i $DOWNLOAD_FOLDER/stretchly_0.19.0_amd64.deb
 
 sudo apt-get install -f -y
+
+
 
 
 
