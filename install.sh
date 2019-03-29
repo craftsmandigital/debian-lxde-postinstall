@@ -25,23 +25,9 @@ sudo apt install -y google-chrome-stable
 
 
 
-yes "________________________________________________________________________" | head -n 10
 # This sequence of code innstalls latest version of vsCode from commandline
-# https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-18-04/
-echo "===> Innstalls latest version of vsCode ..."
-
-# First, update the packages index and install the dependencies by typing:
-sudo apt update -y
-sudo apt install -y software-properties-common apt-transport-https wget
-
-# Next, import the Microsoft GPG key using the following wget command:
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-
-# And enable the Visual Studio Code repository by typing:
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-
-# Once the repository is enabled, install the latest version of Visual Studio Code with:
-sudo apt install -y code
+echo "===> Innstalls latest version of vsCode from ./install-vscode.sh ..."
+./separate-script/install-vscode.sh
 
 # VS Code extensions
 echo "===> Innstall vsCode extention Sync ..."
@@ -77,16 +63,9 @@ sudo apt install -y npm
 
 
 yes "________________________________________________________________________" | head -n 10
-echo "===> Installing hugo ..."
-# Installing hugo
-# https://gohugo.io/getting-started/installing/#snap-package
+echo "===> Installing hugo from install-hugo.sh ..."
 
-# In any of the Linux distributions that support snaps, you may install install the “extended” Sass/SCSS version with this command:
-#snap install hugo --channel=extended
-
-# To install the non-extended version without Sass/SCSS support:
-sudo snap install hugo
-# To switch between the two, use either snap refresh hugo --channel=extended or snap refresh hugo --channel=stable.
+./separate-script/install-hugo.sh
 
 
 
@@ -138,7 +117,9 @@ echo "===> Install Swapp esc and caps and other autostart tasks ..."
 
 # copy all autostart tasks to autostart folder
 mkdir ~/.config/autostart
-cp ~/git_projects/installs/linux-postinstall/desktop-items/* ~/.config/autostart
+cp ~/git_projects/installs/linux-postinstall/desktop-items-start/* ~/.config/autostart
+# Make smart links to desktop to maintain latest versions of vscode and hugo
+ln ~/git_projects/installs/linux-postinstall/separate-script/* ~/Desktop
 
 
 
