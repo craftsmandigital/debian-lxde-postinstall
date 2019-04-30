@@ -137,6 +137,15 @@ sudo apt-get install -f -y
 
 
 yes "________________________________________________________________________" | head -n 10
+echo "===> Installing video capture and editing software ..."
+echo "===> Installing shotcut ..."
+sudo snap install shotcut
+echo "===> Installing vokoscreen ..."
+sudo apt install -y vokoscreen
+
+
+
+yes "________________________________________________________________________" | head -n 10
 echo "===> Install mics ..."
 sudo apt install -y rename
 
