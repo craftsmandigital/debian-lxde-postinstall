@@ -138,8 +138,13 @@ sudo apt-get install -f -y
 
 yes "________________________________________________________________________" | head -n 10
 echo "===> Installing video capture and editing software ..."
-echo "===> Installing shotcut ..."
-sudo snap install shotcut
+
+echo "===> Installing OpenShot ..."
+sudo add-apt-repository -y ppa:openshot.developers/ppa
+sudo apt-get -y update
+sudo apt-get install -y openshot-qt
+
+
 echo "===> Installing vokoscreen ..."
 sudo apt install -y vokoscreen
 
