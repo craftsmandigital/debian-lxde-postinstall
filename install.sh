@@ -154,6 +154,15 @@ yes "________________________________________________________________________" |
 echo "===> Install mics ..."
 sudo apt install -y rename
 
+echo "===> Install ssh to connect remote with putty ..."
+
+# command to get ip adress on ubuntu
+# https://tecadmin.net/check-ip-address-ubuntu-18-04-desktop/
+# ip addr show
+
+# ssh install info
+# https://askubuntu.com/questions/136671/how-to-login-into-a-ubuntu-machine-from-windows
+sudo apt-get install -y openssh-server
 
 
 # chortcutt file
