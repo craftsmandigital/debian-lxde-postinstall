@@ -10,6 +10,12 @@ DOWNLOAD_FOLDER=~/Downloads
 
 
 yes "________________________________________________________________________" | head -n 10
+echo "===> Installing make ..."
+# add make.
+sudo apt update -y
+sudo apt install -y make
+
+yes "________________________________________________________________________" | head -n 10
 echo "===> snap (instalation app) ..."
 # add snap.
 sudo apt update -y
