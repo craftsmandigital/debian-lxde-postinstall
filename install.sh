@@ -44,12 +44,17 @@ code --install-extension Shan.code-settings-sync
 # https://docs.google.com/document/d/1myP5xBDmIM5R5VI8Dp3dEyH6iJL3kk8Uu4_NL49SKow/edit
 
 
+yes "________________________________________________________________________" | head -n 10
+echo "===> Initialising git ..."
+# Initialising git
+sudo apt update -y
+sudo apt install -y git
 
 
 
 
 yes "________________________________________________________________________" | head -n 10
-echo "===> Initialising git configuration ..."
+echo "===> Initialising my git configuration ..."
 # Initialising git
 git config --global user.name $GIT_USERNAME
 git config --global user.email $EMAIL
