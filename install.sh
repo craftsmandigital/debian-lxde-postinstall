@@ -72,8 +72,8 @@ echo "===> Installing node.js and npm ..."
 sudo apt update -y
 sudo apt install -y nodejs
 sudo apt install -y npm
-
-
+# this stuff does not work on debian. This is the solution for debian
+# https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-9
 
 yes "________________________________________________________________________" | head -n 10
 echo "===> Installing hugo from install-hugo.sh ..."
