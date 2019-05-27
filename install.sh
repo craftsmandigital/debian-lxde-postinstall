@@ -14,6 +14,9 @@ echo "===> Installing make ..."
 # add make.
 sudo apt update -y
 sudo apt install -y make
+sudo apt install -y build-essential
+sudo apt install -y libxtst-dev
+
 
 yes "________________________________________________________________________" | head -n 10
 echo "===> snap (instalation app) ..."
