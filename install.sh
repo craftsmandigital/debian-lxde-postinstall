@@ -10,6 +10,14 @@ DOWNLOAD_FOLDER=~/Downloads
 
 
 yes "________________________________________________________________________" | head -n 10
+echo "===> snap (instalation app) ..."
+# add snap.
+sudo apt update -y
+sudo apt install -y snapd
+
+
+
+yes "________________________________________________________________________" | head -n 10
 echo "===> Installing google-chrome ..."
 # add the google-chrome repository to Ubuntu.
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
