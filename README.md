@@ -50,3 +50,13 @@ Use the shortcuts to start google chrome
  - press Shift+Alt+d (this vil import your personal vscode settings. Settings sync extention is already installed) 
  - Copy gist id and secret credentical from this document 
  - https://docs.google.com/document/d/1myP5xBDmIM5R5VI8Dp3dEyH6iJL3kk8Uu4_NL49SKow/edit
+
+### Speed up boot time
+```
+code /etc/default/grub
+```
+Change the delay value to 0 seconds, by setting `GRUB_TIMEOUT=0`:
+Then update your GRUB settings by using the command:
+```
+sudo update-grub
+```

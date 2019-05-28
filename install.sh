@@ -173,8 +173,14 @@ sudo apt install -y vokoscreen
 
 
 yes "________________________________________________________________________" | head -n 10
-echo "===> Install mics ..."
-sudo apt install -y rename
+echo "===> Install mics rename firewall(ufw) ..."
+sudo apt install -y rename ufw
+# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
+sudo ufw enable
+
+# Login with only to type password
+# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
+sudo cp ./no-username-at-login.conf /usr/share/lightdm/lightdm.conf.d/01_my.conf
 
 echo "===> Install ssh to connect remote with putty ..."
 
@@ -223,6 +229,8 @@ cat ./keyboard_shortcuts.conf >> ~/.config/lxqt/globalkeyshortcuts.conf
 
 
 
+sudo apt autoremove -y
+sudo apt clean -y
 
 
 
