@@ -7,7 +7,7 @@ Innstallation of all my personal apps and configuration. after a Debian lxde ins
 The commands under vil do the nesesary stuff, clone and take you to the rigt folder to start an instalation. Copy and paste it into the terminal, hit enter.
 
 ```
-cd ~ && mkdir git_projects && cd git_projects && mkdir installs && cd installs && git clone https://github.com/hackingjack/debian-lxde-postinstall.git && cd linux-postinstall
+cd ~ && mkdir git_projects && cd git_projects && mkdir installs && cd installs && git clone https://github.com/hackingjack/debian-lxde-postinstall.git && cd debian-lxde-postinstall
 
 ```
 ## Second run the instalation script
