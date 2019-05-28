@@ -1,3 +1,6 @@
+# This repo should be rooled back to the first commit before 20190521 And be named lubunu. A fork of this is my Debian LXDE repo
+
+
 # linux-postinstall
 Innstallation of all my personal apps and configuration. after a Lubuntu install
 
