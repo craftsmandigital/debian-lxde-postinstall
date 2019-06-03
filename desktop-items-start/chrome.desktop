@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Google Chrome autostart
+Comment=Start google chrome stable
+Exec=google-chrome-stable

@@ -1,7 +1,7 @@
 [Desktop Entry]
-Exec=/home/jon/git_projects/installs/Space2Ctrl/s2cctl start
-Name=space-as-control
-OnlyShowIn=LXQt;
+Name=space as ctrl
 Type=Application
-Version=1.0
-X-LXQt-Need-Tray=true
+Comment=Using spase as both ctrl and space
+Exec=sh -c "$HOME/git_projects/installs/debian-lxde-postinstall/separate-script/space2ctrl.sh"
+Terminal=false
+StartupNotify=false

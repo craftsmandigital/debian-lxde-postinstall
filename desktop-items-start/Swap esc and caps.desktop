@@ -1,7 +1,7 @@
 [Desktop Entry]
-Exec=/usr/bin/xmodmap ~/git_projects/installs/linux-postinstall/.Xmodmap
-Name=Swap-esc-and-caps
-OnlyShowIn=LXQt;
+Name=swap esc and caps
 Type=Application
-Version=1.0
-X-LXQt-Need-Tray=true
+Comment=swap esc and caps
+Exec=sh -c "/usr/bin/xmodmap $HOME/git_projects/installs/debian-lxde-postinstall/.Xmodmap"
+Terminal=false
+StartupNotify=false

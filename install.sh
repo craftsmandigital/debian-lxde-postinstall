@@ -1,3 +1,4 @@
+#!/bin/sh
 # How to install Chrome browser properly via command line? 
 # https://askubuntu.com/questions/991583/how-to-install-google-chrome-from-terminal
 
@@ -6,6 +7,7 @@
 EMAIL=htcjon10@gmail.com
 GIT_USERNAME="Jon Arne"
 DOWNLOAD_FOLDER=~/Downloads
+INSTALL_SCRIPT_FOLDER=$(pwd)
 
 
 
@@ -135,19 +137,21 @@ echo "===> Install Swapp esc and caps and other autostart tasks ..."
 # Svapp caps and esc
 # http://xahlee.info/linux/linux_swap_capslock_esc_key.html
 
+echo "$(which xmodmap) ~/.Xmodmap" >> ~/.xinitrc
+
 # xmodmap ~/.Xmodmap
 
 # copy all autostart tasks to autostart folder
 mkdir ~/.config/autostart
-cp ~/git_projects/installs/linux-postinstall/desktop-items-start/* ~/.config/autostart
+cp $INSTALL_SCRIPT_FOLDER/desktop-items-start ~/.config/autostart
 # Make smart links to desktop to maintain latest versions of vscode and hugo
-ln ~/git_projects/installs/linux-postinstall/separate-script/* ~/Desktop
+ln $INSTALL_SCRIPT_FOLDER/separate-script/* ~/Desktop
 
 
 
 
 yes "________________________________________________________________________" | head -n 10
-echo "===> Install Stretc break software
+echo "===> Install Stretc break software"
 wget --directory-prefix=$DOWNLOAD_FOLDER --no-check-certificate https://github.com/hovancik/stretchly/releases/download/v0.19.0/stretchly_0.19.0_amd64.deb
 
 sudo dpkg -i $DOWNLOAD_FOLDER/stretchly_0.19.0_amd64.deb
@@ -155,7 +159,7 @@ sudo dpkg -i $DOWNLOAD_FOLDER/stretchly_0.19.0_amd64.deb
 sudo apt-get install -f -y
 
 
-
+apt-get install shellcheck
 
 
 yes "________________________________________________________________________" | head -n 10
