@@ -149,6 +149,16 @@ ln $INSTALL_SCRIPT_FOLDER/separate-script/* ~/Desktop
 
 
 
+# Inserts content of my shortcuts into the systems shortcutfile.
+# my shortcut is copied from the file my-shortcuts.xml and inserted
+# into the systems shortcutfile(lxde.xml), just before the end of the section
+# <keyboard>
+cd $INSTALL_SCRIPT_FOLDER
+sudo sed -i $'/<\/keyboard>/{e cat     ./my-shortcuts.xml\n}' $HOME/.config/openbox/lxde-rc.xml
+
+
+
+
 
 yes "________________________________________________________________________" | head -n 10
 echo "===> Install Stretc break software"
