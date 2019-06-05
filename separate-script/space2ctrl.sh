@@ -20,7 +20,10 @@ then
 
 fi
 
+# Killing all xcape deamons if them exists
+# https://www.booleanworld.com/kill-process-linux/
 
+killall xcape
 
 # Map an unused modifier's keysym to the spacebar's keycode and make it a
 # control modifier. It needs to be an existing key so that emacs won't
@@ -28,6 +31,8 @@ fi
 # https://github.com/alols/xcape
 
 spare_modifier="Hyper_L"
+
+
 xmodmap -e "keycode 65 = $spare_modifier"
 xmodmap -e "remove mod4 = $spare_modifier" # hyper_l is mod4 by default
 xmodmap -e "add Control = $spare_modifier"

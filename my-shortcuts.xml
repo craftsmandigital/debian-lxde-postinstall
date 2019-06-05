@@ -71,7 +71,11 @@
                 <command>lxde-logout</command>
             </action>
         </keybind>
-
+        <keybind key='W-space'>
+            <action name='Execute'>
+                <command>sh -c &quot;$HOME/git_projects/installs/debian-lxde-postinstall/separate-script/switch-key-lang.sh&quot;</command>
+            </action>
+        </keybind>
 
 
         <!-- ********************* END INSERTED BY INSTALL SCRIPT ******************* -->
