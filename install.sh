@@ -2,6 +2,21 @@
 # How to install Chrome browser properly via command line? 
 # https://askubuntu.com/questions/991583/how-to-install-google-chrome-from-terminal
 
+USR_CUSTOM_SCRIPTS=/opt/usr-custom-scripts
+echo "USR_CUSTOM_SCRIPTS=/opt/usr-custom-scripts" >> /etc/environment
+export $USR_CUSTOM_SCRIPTS
+sudo mkdir $USR_CUSTOM_SCRIPTS
+sudo chmod 755 $USR_CUSTOM_SCRIPTS
+
+# sudo bash -c printf "PATH=\"$USR_CUSTOM_SCRIPTS:\$PATH\"\nexport \$PATH\n" >> /etc/profile
+# https://unix.stackexchange.com/questions/382946/getting-permission-denied-when-trying-to-append-text-onto-a-file-using-sudo
+printf "PATH=\"$USR_CUSTOM_SCRIPTS:\$PATH\"\nexport PATH\n" | sudo tee -a /etc/profile
+
+
+printf "PATH=\"$USR_CUSTOM_SCRIPTS:\$PATH\"\nexport PATH\n" > /etc/profile.d/usr-set-path.sh
+
+
+PATH="$HOME/bin:$PATH"
 #### Variables ####
 
 EMAIL=htcjon10@gmail.com

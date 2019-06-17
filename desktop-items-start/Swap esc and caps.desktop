@@ -2,6 +2,6 @@
 Name=swap esc and caps
 Type=Application
 Comment=swap esc and caps
-Exec=sh -c "/usr/bin/xmodmap $HOME/git_projects/installs/debian-lxde-postinstall/.Xmodmap"
+Exec=sh -c "$HOME/git_projects/installs/debian-lxde-postinstall/separate-script/swap-caps-and-esc.sh"
 Terminal=false
 StartupNotify=false

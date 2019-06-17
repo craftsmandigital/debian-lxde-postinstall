@@ -1,6 +1,25 @@
-! Swap caps lock and escape
-! https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_XWindows
-remove Lock = Caps_Lock
+
+! ~/.Xmodmap
+
+! mapp esc to capslock 
 keysym Escape = Caps_Lock
-keysym Caps_Lock = Escape
-add Lock = Caps_Lock
+
+! esc is no longer aviable on a keycode. To use esc later on
+! we use an ununused keycode to make it hang around
+keycode 999 = Escape
+
+! The prosess of making caps as level 3 shift key
+clear lock
+!Maps Caps-Lock as Level3 Shift
+keycode 66 = Mode_switch ISO_Level3_Shift
+
+! Norwegian alpha chars ÆØÅ when level3 shift(caps) is hold down
+! https://blog.stigok.com/2017/07/10/norwegian-keys-on-us-keyboard-layout-with-xmodmap.html
+keycode 47 = semicolon colon oslash Oslash
+keycode 48 = apostrophe quotedbl ae AE
+keycode 34 = bracketleft braceleft aring Aring
+
+
+! To make (caps) to also work as esc when key is tapped on its own,
+! the deamon xcape ned to be started with these options.
+! xcape -e 'Mode_switch=Escape'

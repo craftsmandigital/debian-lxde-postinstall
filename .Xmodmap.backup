@@ -1,0 +1,18 @@
+! Swap caps lock and escape
+! https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_XWindows
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
+
+
+
+! ! ~/.Xmodmap
+! ! https://blog.stigok.com/2017/07/10/norwegian-keys-on-us-keyboard-layout-with-xmodmap.html
+! clear lock
+! !Maps Caps-Lock as Level3 Shift
+! keycode 66 = Mode_switch ISO_Level3_Shift
+! !Norwegian alpha chars ÆØÅ
+! keycode 47 = semicolon colon oslash Oslash
+! keycode 48 = apostrophe quotedbl ae AE
+! keycode 34 = bracketleft braceleft aring Aring

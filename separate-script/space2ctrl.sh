@@ -20,11 +20,6 @@ then
 
 fi
 
-# Killing all xcape deamons if them exists
-# https://www.booleanworld.com/kill-process-linux/
-
-killall xcape
-
 # Map an unused modifier's keysym to the spacebar's keycode and make it a
 # control modifier. It needs to be an existing key so that emacs won't
 # spazz out when you press it. Hyper_L is a good candidate.

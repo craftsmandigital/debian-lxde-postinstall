@@ -25,4 +25,4 @@ cd $SCRIPT_DIR
 #spase as control and space
 ./space2ctrl.sh
 # switching esc and caps
-xmodmap ../.Xmodmap
+./swap-caps-and-esc.sh
