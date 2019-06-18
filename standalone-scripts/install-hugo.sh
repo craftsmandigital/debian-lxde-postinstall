@@ -3,7 +3,7 @@
 # snap issue with debian check 8 in this url
 # https://askubuntu.com/questions/917233/snap-snapd-hello-world-example-not-working-path-not-found
 
-yes "________________________________________________________________________" | head -n 10
+# yes "________________________________________________________________________" | head -n 10
 echo "===> Remove hugo if it exists ..."
 sudo snap remove hugo
 

@@ -1,10 +1,6 @@
 #!/bin/sh
-
-# find the current directory of this script
-# https://unix.stackexchange.com/questions/273341/obtain-script-current-directory-so-that-i-can-do-include-files-without-relative?answertab=votes#tab-top
-SCRIPT_DIR="${0%/*}"
-cd $SCRIPT_DIR 
-
-
-xmodmap ../.Xmodmap
+# switching esc and caps
+# also make caps to a level3 shift key.
+# when level3 shift is pressed then Norwegian keys can be reached.
+xmodmap $USR_CUSTOM_SCRIPTS/config-files/keyboard-config-xmodmap
 xcape -e 'Mode_switch=Escape'

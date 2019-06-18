@@ -1,6 +1,6 @@
 #!/bin/sh
 
-yes "________________________________________________________________________" | head -n 10
+# yes "________________________________________________________________________" | head -n 10
 # This sequence of code innstalls latest version of vsCode from commandline
 # https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-18-04/
 

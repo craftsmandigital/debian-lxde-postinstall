@@ -8,7 +8,6 @@ which xcape
 if [ $? -ne 0 ];
 then
 
-  sudo apt-get -y install git gcc make pkg-config libx11-dev libxtst-dev libxi-dev
 
   tmp_dir=$(mktemp -d)
   cd $tmp_dir
