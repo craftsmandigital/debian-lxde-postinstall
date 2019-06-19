@@ -122,16 +122,6 @@ sudo apt-get -y install curl
 
 
 
-pretty_print_heading Login with only to type password
-# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
-sudo cp $USR_CUSTOM_SCRIPTS/config-files/no-username-at-login.conf /usr/share/lightdm/lightdm.conf.d/01_my.conf
-
-
-
-
-
-
-
 pretty_print_heading Install space2ctrl
 # Setteing up space2ctrl
 # https://github.com/r0adrunner/Space2Ctrl
@@ -155,9 +145,13 @@ $USR_CUSTOM_SCRIPTS/standalone-scripts/swap-caps-and-esc.sh
 pretty_print_heading copy all autostart tasks to autostart folder
 mkdir ~/.config/autostart
 mkdir ~/Desktop/autostart
+
 ln $USR_CUSTOM_SCRIPTS/startup-at-login-apps/* ~/.config/autostart
 # Make smart links to desktop to maintain latest versions of vscode and hugo
 ln $USR_CUSTOM_SCRIPTS/startup-at-login-apps/* ~/Desktop/autostart
+
+mkdir ~/Desktop/standalone-scripts
+ln $USR_CUSTOM_SCRIPTS/standalone-scripts/* ~/Desktop/standalone-scripts
 
 
 pretty_print_heading Installing keyboard shortcuts
@@ -353,6 +347,16 @@ sudo apt install -y vokoscreen
 # # https://superuser.com/questions/972355/what-needs-to-run-to-stop-the-start-job-dev-disk-by-check-on-each-boot
 # cat /etc/fstab
 # lsblk -f    # remove swap things after comparing output of the comands
+
+
+
+
+pretty_print_heading Login with only to type password
+# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
+sudo cp $USR_CUSTOM_SCRIPTS/config-files/no-username-at-login.conf /usr/share/lightdm/lightdm.conf.d/01_my.conf
+
+
+
 
 
 
