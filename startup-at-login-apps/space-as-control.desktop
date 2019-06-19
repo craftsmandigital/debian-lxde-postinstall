@@ -2,6 +2,6 @@
 Name=space as ctrl
 Type=Application
 Comment=Using spase as both ctrl and space
-Exec=sh -c "$HOME/git_projects/installs/debian-lxde-postinstall/separate-script/space2ctrl.sh"
+Exec=sh -c "$USR_CUSTOM_SCRIPTS/standalone-scripts/space2ctrl.sh"
 Terminal=false
 StartupNotify=false
