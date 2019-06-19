@@ -1,7 +1,0 @@
-[Desktop Entry]
-Exec=/usr/bin/touchpad-indicator
-Name=touchpad-indicator
-OnlyShowIn=LXQt;
-Type=Application
-Version=1.0
-X-LXQt-Need-Tray=true

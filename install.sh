@@ -1,4 +1,20 @@
-#!/bin/sh
+#!/bin/bash
+
+
+# Installing the basic binaris did not work for me. Perhaps it is my computer.
+# The problem was that I could not connect to my vireles network during install
+# The solution vas to download non-free binnarys from this link.
+
+# The seccond problem was that I could not connect to internett on the finnished innstalation
+# The fix to this problem is to follow the instruction on this link 
+
+# Git must be preinstalled to download this script from github
+#
+
+
+# Manually configuration
+
+# Configure vscode sync extention 
 
 
 
@@ -33,7 +49,16 @@ export USR_CUSTOM_SCRIPTS="$( cd "$(dirname "$0")" && pwd -P )"
 # this variable vil be used masively. 
 # Debian is not friendly for setting enviroment variables. 
 # Setting variables for all user in /etc/enviroment worked fine.
-sudo echo "USR_CUSTOM_SCRIPTS=$USR_CUSTOM_SCRIPTS" >> /etc/environment
+# echo "USR_CUSTOM_SCRIPTS=$USR_CUSTOM_SCRIPTS" >> /etc/environment
+echo "USR_CUSTOM_SCRIPTS=$USR_CUSTOM_SCRIPTS" | sudo tee -a /etc/environment
+
+
+# I had to do this to make snap installed packages available for all users. Debian
+# vil not include stuff in path.
+# NB!!!!! I Do not know the consequenses of this. Maybe sbin stuff is no longer 
+# available for sudo and root user
+export PATH=/snap/bin:$PATH
+echo $PATH | sudo tee -a /etc/environment
 
 # Changing permissions so everybody on the host could read and execute schripts
 # in the folder $USR_CUSTOM_SCRIPTS
@@ -77,12 +102,103 @@ sudo apt install -y libxtst-dev
 sudo apt-get -y install git pkg-config libx11-dev libxtst-dev libxi-dev
 
 
+
+
+
+
+
 pretty_print_heading Installing Snap (instalation app)
 # add snap.
 sudo apt update -y
 sudo apt install -y snapd
-# Buggy stuff
-export PATH=/snap/bin:$PATH
+
+
+
+pretty_print_heading Installing curl
+sudo apt-get -y install curl
+
+
+
+
+
+
+pretty_print_heading Login with only to type password
+# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
+sudo cp $USR_CUSTOM_SCRIPTS/config-files/no-username-at-login.conf /usr/share/lightdm/lightdm.conf.d/01_my.conf
+
+
+
+
+
+
+
+pretty_print_heading Install space2ctrl
+# Setteing up space2ctrl
+# https://github.com/r0adrunner/Space2Ctrl
+
+$USR_CUSTOM_SCRIPTS/standalone-scripts/space2ctrl.sh
+
+
+
+pretty_print_heading Install Swapp esc and caps. Shif3 level and Norwegian keys
+# Svapp caps and esc
+# http://xahlee.info/linux/linux_swap_capslock_esc_key.html
+
+$USR_CUSTOM_SCRIPTS/standalone-scripts/swap-caps-and-esc.sh
+
+
+
+
+
+
+
+pretty_print_heading copy all autostart tasks to autostart folder
+mkdir ~/.config/autostart
+mkdir ~/Desktop/autostart
+ln $USR_CUSTOM_SCRIPTS/startup-at-login-apps/* ~/.config/autostart
+# Make smart links to desktop to maintain latest versions of vscode and hugo
+ln $USR_CUSTOM_SCRIPTS/startup-at-login-apps/* ~/Desktop/autostart
+
+
+pretty_print_heading Installing keyboard shortcuts
+# Inserts content of my shortcuts into the systems shortcutfile.
+# my shortcut is copied from the file my-shortcuts.xml and inserted
+# into the systems shortcutfile(lxde.xml), just before the end of the section
+# <keyboard>
+cd $USR_CUSTOM_SCRIPTS
+sed -i $'/<\/keyboard>/{e cat     ./keyboard-shortcuts/my-shortcuts.xml\n}' $HOME/.config/openbox/lxde-rc.xml
+
+
+
+
+
+
+
+
+pretty_print_heading Initialising my git configuration
+# Initialising git
+git config --global user.name $GIT_USERNAME
+git config --global user.email $EMAIL
+
+# Set git to use the credential memory cache
+git config --global credential.helper cache
+
+# To change the default password cache timeout, enter the following:
+git config --global credential.helper 'cache --timeout=36000'
+# Set the cache to timeout after 10 hour (setting is in seconds)
+
+
+
+
+
+
+pretty_print_heading Install mics rename firewall ufw
+sudo apt install -y rename ufw
+# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
+sudo ufw enable
+
+
+
 
 
 # How to install Chrome browser properly via command line? 
@@ -114,25 +230,13 @@ pretty_print_heading Innstalls latest version of vsCode from $USR_CUSTOM_SCRIPTS
 $USR_CUSTOM_SCRIPTS/standalone-scripts/install-vscode.sh
 
 # VS Code extensions
-echo "===> Innstall vsCode extention Sync ..."
+pretty_print_heading Innstall vsCode extention Sync
+# Installing extention as local user
+# sudo -u $SUDO_USER code --install-extension Shan.code-settings-sync
 code --install-extension Shan.code-settings-sync
 # watch this for sync settings
 # https://docs.google.com/document/d/1myP5xBDmIM5R5VI8Dp3dEyH6iJL3kk8Uu4_NL49SKow/edit
 
-
-
-
-pretty_print_heading Initialising my git configuration
-# Initialising git
-git config --global user.name $GIT_USERNAME
-git config --global user.email $EMAIL
-
-# Set git to use the credential memory cache
-git config --global credential.helper cache
-
-# To change the default password cache timeout, enter the following:
-git config --global credential.helper 'cache --timeout=36000'
-# Set the cache to timeout after 10 hour (setting is in seconds)
 
 
 
@@ -141,10 +245,11 @@ git config --global credential.helper 'cache --timeout=36000'
 
 pretty_print_heading Installing node.js and npm
 # this stuff does not work on debian. This is the solution for debian
-# https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-9
+# https://linuxize.com/post/how-to-install-node-js-on-debian-9/
+
 sudo apt update -y
+curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
 sudo apt install -y nodejs
-sudo apt install -y npm
 
 
 
@@ -159,20 +264,6 @@ $USR_CUSTOM_SCRIPTS/standalone-scripts/install-hugo.sh
 
 
 
-
-pretty_print_heading Install space2ctrl
-# Setteing up space2ctrl
-# https://github.com/r0adrunner/Space2Ctrl
-
-$USR_CUSTOM_SCRIPTS/standalone-scripts/space2ctrl.sh
-
-
-
-pretty_print_heading Install Swapp esc and caps. Shif3 level and Norwegian keys
-# Svapp caps and esc
-# http://xahlee.info/linux/linux_swap_capslock_esc_key.html
-
-$USR_CUSTOM_SCRIPTS/standalone-scripts/swap-caps-and-esc.sh
 
 
 
@@ -195,27 +286,10 @@ $USR_CUSTOM_SCRIPTS/standalone-scripts/swap-caps-and-esc.sh
 # # type inn the path to touchpad-indicator
 
 
-# copy all autostart tasks to autostart folder
-mkdir ~/.config/autostart
-cp $INSTALL_SCRIPT_FOLDER/desktop-items-start ~/.config/autostart
-# Make smart links to desktop to maintain latest versions of vscode and hugo
-ln $INSTALL_SCRIPT_FOLDER/separate-script/* ~/Desktop
 
 
 
-# Inserts content of my shortcuts into the systems shortcutfile.
-# my shortcut is copied from the file my-shortcuts.xml and inserted
-# into the systems shortcutfile(lxde.xml), just before the end of the section
-# <keyboard>
-cd $INSTALL_SCRIPT_FOLDER
-sudo sed -i $'/<\/keyboard>/{e cat     ./my-shortcuts.xml\n}' $HOME/.config/openbox/lxde-rc.xml
-
-
-
-
-
-yes "________________________________________________________________________" | head -n 10
-echo "===> Install Stretc break software"
+pretty_print_heading Install Stretc break software
 wget --directory-prefix=$DOWNLOAD_FOLDER --no-check-certificate https://github.com/hovancik/stretchly/releases/download/v0.19.0/stretchly_0.19.0_amd64.deb
 
 sudo dpkg -i $DOWNLOAD_FOLDER/stretchly_0.19.0_amd64.deb
@@ -223,48 +297,35 @@ sudo dpkg -i $DOWNLOAD_FOLDER/stretchly_0.19.0_amd64.deb
 sudo apt-get install -f -y
 
 
-apt-get install shellcheck
 
 
-yes "________________________________________________________________________" | head -n 10
-echo "===> Installing video capture and editing software ..."
-
-echo "===> Installing OpenShot ..."
+pretty_print_heading Installing video capture and editing software
+sudo apt-get -y update
+pretty_print_heading Installing OpenShot
 sudo add-apt-repository -y ppa:openshot.developers/ppa
 sudo apt-get -y update
-sudo apt-get install -y openshot-qt
+sudo apt-get install -y openshot
 
 
-echo "===> Installing vokoscreen ..."
+
+pretty_print_heading Installing vokoscreen
 sudo apt install -y vokoscreen
 
 
 
-yes "________________________________________________________________________" | head -n 10
-echo "===> Install mics rename firewall(ufw) ..."
-sudo apt install -y rename ufw
-# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
-sudo ufw enable
 
-# Login with only to type password
-# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
-sudo cp ./no-username-at-login.conf /usr/share/lightdm/lightdm.conf.d/01_my.conf
-
-echo "===> Install ssh to connect remote with putty ..."
-
-# command to get ip adress on ubuntu
-# https://tecadmin.net/check-ip-address-ubuntu-18-04-desktop/
-# ip addr show
-
-# ssh install info
-# https://askubuntu.com/questions/136671/how-to-login-into-a-ubuntu-machine-from-windows
-sudo apt-get install -y openssh-server
+# I think this is already pre installed
+#pretty_print_heading Install ssh to connect remote with putty
+#
+## command to get ip adress on ubuntu
+## https://tecadmin.net/check-ip-address-ubuntu-18-04-desktop/
+## ip addr show
+#
+## ssh install info
+## https://askubuntu.com/questions/136671/how-to-login-into-a-ubuntu-machine-from-windows
+#sudo apt-get install -y openssh-server
 
 
-# chortcutt file
-# ~/.config/lxqt/globalkeyshortcuts.conf
-# add personal keyboard chortcuts to the systems chortcutfile
-cat ./keyboard_shortcuts.conf >> ~/.config/lxqt/globalkeyshortcuts.conf
 
 # # Limit a gui program in Linux to only one instance
 # # https://superuser.com/questions/170937/limit-a-gui-program-in-linux-to-only-one-instance
