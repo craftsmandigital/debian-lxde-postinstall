@@ -107,7 +107,7 @@ sudo apt-get -y install git pkg-config libx11-dev libxtst-dev libxi-dev
 
 
 
-pretty_print_heading Installing Snap (instalation app)
+pretty_print_heading Installing Snap instalation app
 # add snap.
 sudo apt update -y
 sudo apt install -y snapd
@@ -226,6 +226,7 @@ sudo apt install -y google-chrome-stable
 
 # This sequence of code innstalls latest version of vsCode from commandline
 pretty_print_heading Innstalls latest version of vsCode from $USR_CUSTOM_SCRIPTS/standalone-schripts/install-vscode.sh
+sudo apt update -y
 
 $USR_CUSTOM_SCRIPTS/standalone-scripts/install-vscode.sh
 
