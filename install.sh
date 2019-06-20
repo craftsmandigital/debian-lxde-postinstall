@@ -93,6 +93,25 @@ cp $USR_CUSTOM_SCRIPTS/config-files/.bash_profile $HOME/.xsessionrc
 
 
 
+# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
+pretty_print_heading Removing boot schoices before boot
+sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/g' /etc/default/grub
+sudo update-grub
+pretty_print_heading Login with only to type password no need for typing username
+sudo cp $USR_CUSTOM_SCRIPTS/config-files/no-username-at-login.conf /usr/share/lightdm/lightdm.conf.d/01_my.conf
+
+
+
+
+
+pretty_print_heading If you are using a SSD consider enabling FS trimming to let the hard disk reclaim unused blocks
+# https://p5r.uk/blog/2017/post-installation-tweaks-debian-stretch.html
+sudo cp /usr/share/doc/util-linux/examples/fstrim.{service,timer} /etc/systemd/system
+sudo systemctl enable fstrim.timer
+# reduce the number of swap operations by reducing the vm.swappiness parameter:
+echo vm.swappiness=1 | sudo tee -a /etc/sysctl.d/80-local.conf
+ 
+
 
 pretty_print_heading Installing tool to compile and download scource code
 # add make.
@@ -347,18 +366,6 @@ sudo apt install -y vokoscreen
 # # https://superuser.com/questions/972355/what-needs-to-run-to-stop-the-start-job-dev-disk-by-check-on-each-boot
 # cat /etc/fstab
 # lsblk -f    # remove swap things after comparing output of the comands
-
-
-
-
-pretty_print_heading Login with only to type password
-# https://averagelinuxuser.com/10-things-to-do-after-installing-debian/
-sudo cp $USR_CUSTOM_SCRIPTS/config-files/no-username-at-login.conf /usr/share/lightdm/lightdm.conf.d/01_my.conf
-
-
-
-
-
 
 
 

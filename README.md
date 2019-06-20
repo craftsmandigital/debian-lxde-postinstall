@@ -12,7 +12,7 @@ cd ~ && mkdir git_projects && cd git_projects && mkdir installs && cd installs &
 ```
 ## Second run the instalation script
 ```
-sudo init.sh
+./install.sh
 ```
 
 ## Third post install Manual tasks
