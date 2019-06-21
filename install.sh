@@ -58,7 +58,7 @@ echo "USR_CUSTOM_SCRIPTS=$USR_CUSTOM_SCRIPTS" | sudo tee -a /etc/environment
 # NB!!!!! I Do not know the consequenses of this. Maybe sbin stuff is no longer 
 # available for sudo and root user
 export PATH=/snap/bin:$PATH
-echo $PATH | sudo tee -a /etc/environment
+echo \PATH=$PATH | sudo tee -a /etc/environment
 
 # Changing permissions so everybody on the host could read and execute schripts
 # in the folder $USR_CUSTOM_SCRIPTS
@@ -326,6 +326,16 @@ pretty_print_heading Installing vokoscreen
 sudo apt install -y vokoscreen
 
 
+
+
+pretty_print_heading Install Pandoc
+wget --directory-prefix=$DOWNLOAD_FOLDER --no-check-certificate https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
+
+sudo dpkg -i $DOWNLOAD_FOLDER/pandoc-2.7.3-1-amd64.deb
+
+sudo apt-get install -f -y
+sudo apt-get -y update
+# sudo apt-get install -y texlive-xetex
 
 
 # I think this is already pre installed
