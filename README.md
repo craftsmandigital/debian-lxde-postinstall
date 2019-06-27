@@ -98,9 +98,9 @@ The Debian 9 installation with LXDE desktop environments is a quite minimal inst
 
 ### Keyboard manipulations.
 One of the big reasons that I switched from Windows to Linux. It\'s because you can manipulate everything in the Linux configuration. I have tried to manipulate the keyboard in Windows, with [autohotkey](https://www.autohotkey.com/). But that is not reliable at all. Here is all the changes to the normal us keyboard configuration.
--   <kbd>Space</kbd> works as <kbd>Spase</kbd> and <kbd>Ctrl</kbd>. When holding <kbd>Space</kbd> down it works as<kbd>Ctrl</kbd>.
--   Switched <kbd>Caps</kbd> and the <kbd>Esc</kbd>. (Hitting <kbd>Esc</kbd> makes <kbd>Caps</kbd>. To make <kbd>Esc</kbd> you have to hit <kbd>Caps</kbd>)
--   <kbd>Caps</kbd>Also works as a third level <kbd>Shift</kbd> when you hold it down.
+-   <kbd>Space</kbd> works as <kbd>Spase</kbd> and <kbd>Ctrl</kbd>. When holding <kbd>Space</kbd> down it works as <kbd>Ctrl</kbd>.
+-   Switched <kbd>Caps</kbd> and <kbd>Esc</kbd>. (Hitting <kbd>Esc</kbd> makes <kbd>Caps</kbd>. To make <kbd>Esc</kbd> you have to hit <kbd>Caps</kbd>)
+-   <kbd>Caps</kbd> Also works as a third level <kbd>Shift</kbd> when you hold it down.
 
 | Key pressed                       | Norwegian character |
 |-----------------------------------|---------------------|
