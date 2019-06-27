@@ -118,4 +118,5 @@ One of the big reasons that I switched from Windows to Linux. It\'s because you 
 | <kbd>Super+j</kbd> | Starts Google Chrome with my job account     |
 | <kbd>Super+c</kbd> | Starts visual studio code                    |
 | <kbd>Super+x</kbd> | Bring up the system log out section          |
+
 For more keyboard shortcuts you can look inside the file [keyboard-shortcuts/my-shortcuts.xml](./keyboard-shortcuts/my-shortcuts.xml)
