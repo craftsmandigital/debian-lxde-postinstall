@@ -47,9 +47,9 @@ sudo apt install -y git
 ```
 The commands under vil do the necessary stuff, clone and take you to the right folder to start the post-installation Script. Copy and paste it into the terminal, hit enter.
 ```sh
-rm -R \~/git\_projects/installs/debian-lxde-postinstall
-mkdir -p \~/git\_projects/installs
-cd \~/git\_projects/installs && git clone https://github.com/hackingjack/debian-lxde-postinstall.git && cd debian-lxde-postinstall
+rm -R ~/git_projects/installs/debian-lxde-postinstall
+mkdir -p ~/git_projects/installs
+cd ~/git_projects/installs && git clone https://github.com/hackingjack/debian-lxde-postinstall.git && cd debian-lxde-postinstall
 ```
 
 ### Set your personal settings before post-installation Script
