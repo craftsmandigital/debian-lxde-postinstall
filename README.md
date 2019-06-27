@@ -66,14 +66,14 @@ nano ./variables-user.sh
 ### Manual task to do after finishing the post-installation Script
 -   Configuring Google Chrome account
     -   Personal account
-        -   Press <kbd>Super-g</kbd>. This will bring up Google Chrome
+        -   Press <kbd>Super+g</kbd>. This will bring up Google Chrome
         -   If you have a password manager download and configure that extension.
         -   Sync your chrome account
     -   Job account
-        -   Press <kbd>Super-j</kbd>. This will bring up Google Chrome
+        -   Press <kbd>Super+j</kbd>. This will bring up Google Chrome
         -   Chrome will ask about sync in first screen. Hit the button and write in gmail/password to job account
 -   Configuring visual studio code
-    -   Press <kbd>Super-c</kbd>. This will bring up vscode
+    -   Press <kbd>Super+c</kbd>. This will bring up vscode
     -   press <kbd>Shift+Alt+d </kbd>(this vil import your personal vscode settings. Settings sync extension is already installed during the post-installation)
     -   Type in gist id and secret credential for the sync extension. (This [link](https://docs.google.com/document/d/1myP5xBDmIM5R5VI8Dp3dEyH6iJL3kk8Uu4_NL49SKow/edit) is my personal credentials, you do not have access to them)
 -   Setting up printer
