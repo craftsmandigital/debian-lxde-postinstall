@@ -1,6 +1,23 @@
 
 # Debian 9 lxde Install and postinstall 
 
+- [Debian 9 lxde Install and postinstall](#Debian-9-lxde-Install-and-postinstall)
+	- [The Debian 9 LXDE installation process.](#The-Debian-9-LXDE-installation-process)
+		- [Issues during the installation](#Issues-during-the-installation)
+		- [Solutions for Issues during the installation](#Solutions-for-Issues-during-the-installation)
+		- [The Debian 9 installation process](#The-Debian-9-installation-process)
+	- [The Debian 9 LXDE post install process.](#The-Debian-9-LXDE-post-install-process)
+		- [Download and prepare for post-installation Script](#Download-and-prepare-for-post-installation-Script)
+		- [Set your personal settings before post-installation Script](#Set-your-personal-settings-before-post-installation-Script)
+		- [Execute The post-installation Script](#Execute-The-post-installation-Script)
+		- [Manual task to do after finishing the post-installation Script](#Manual-task-to-do-after-finishing-the-post-installation-Script)
+	- [Overview over the contents of the post-installation script](#Overview-over-the-contents-of-the-post-installation-script)
+		- [Miscellaneous applications.](#Miscellaneous-applications)
+		- [Desktop applications](#Desktop-applications)
+		- [Technical applications](#Technical-applications)
+		- [Keyboard manipulations.](#Keyboard-manipulations)
+		- [keyboard shortcuts](#keyboard-shortcuts)
+
 ## The Debian 9 LXDE installation process.
 
 ### Issues during the installation
