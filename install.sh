@@ -32,13 +32,6 @@ pretty_print_heading()
 }
 
 
-#### Variables ####
-
-pretty_print_heading declaring variables and do initial preparations
-
-EMAIL=htcjon10@gmail.com
-GIT_USERNAME="Jon Arne"
-DOWNLOAD_FOLDER=~/Downloads
 
 # find the current directory of this script
 # https://stackoverflow.com/questions/4774054/reliable-way-for-a-bash-script-to-get-the-full-path-to-itself
@@ -71,6 +64,13 @@ cp $USR_CUSTOM_SCRIPTS/config-files/.bash_profile $HOME/.xsessionrc
 
 
 
+
+
+
+#### User Variables ####
+
+pretty_print_heading declaring variables and do initial preparations
+source $USR_CUSTOM_SCRIPTS/variables-user.sh
 
 
 
