@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# NB!! Testing stuff happendsbelow the ######### line
 
 
 # find the current directory of this script
@@ -17,7 +18,7 @@ source $USR_CUSTOM_SCRIPTS/variables-user.sh
 
 ###########################################################################################
 
-# Testing stuff happends here blow the #### line
+# Testing stuff happends here below the ######## line
 # Pick stuff from install.sh and test it here
 
 # This is an example test of output of variables declared in variables-user.sh
