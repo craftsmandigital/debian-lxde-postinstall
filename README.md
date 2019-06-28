@@ -17,8 +17,17 @@
 		- [Technical applications](#Technical-applications)
 		- [Keyboard manipulations.](#Keyboard-manipulations)
 		- [keyboard shortcuts](#keyboard-shortcuts)
+	- [My experience with different Linux distros](#My-experience-with-different-Linux-distros)
+		- [Ubuntu 16.. With GNOME desktop](#Ubuntu-16-With-GNOME-desktop)
+		- [LUbuntu 18.. With LXQT desktop](#LUbuntu-18-With-LXQT-desktop)
+		- [Debian 9.9 With LXDE desktop](#Debian-99-With-LXDE-desktop)
+	- [How to test the post-installation script(install.sh)](#How-to-test-the-post-installation-scriptinstallsh)
 
 ## The Debian 9 LXDE installation process.
+This document describes :
+-   How to install Debian 9 with lxde desktop environment.
+-   How to run my post-installation script [install.sh](./install.sh). The script configures my personal computer ready for use. With all my favourite configurations and applications.
+The installation script is quite personal. But I think other people can use this as it is. I also think it can be a good starting point to fork this Repo and tailor it for your needs.
 
 ### Issues during the installation
 The installation process was quite straightforward, After dealing with two issues:
@@ -26,9 +35,10 @@ The installation process was quite straightforward, After dealing with two issue
 2.  After the installation was finished, I could not connect to my wireless network.
 
 ### Solutions for Issues during the installation
-1.  Maybe I got this issue because my computer is somewhat old or something. the solution to the problem was to install the "Non-free Firmware" version of Debian 9. You can download it and create an installation medium on DVD or usb from this [link](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/amd64/iso-cd/)
-
-2.  When you come to the last screen of the installation Instructions, Which heading is \"Finish the install\". Do not go further and follow the instructions on this [link](https://lists.debian.org/debian-user/2017/06/msg00943.html)
+1.  Maybe I got this issue because my computer is somewhat old or something. the solution to the problem was to install the "Non-free Firmware" version of Debian 9. You can download it and create an installation medium on CD or USB from these links:
+    a.  [amd64](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/amd64/iso-cd/) for a 64 bit PC
+    b.  [I386](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/i386/iso-cd/) for a 32 bit PC
+2.  When you come to the last screen of the installation Instructions, Which heading is \"Finish the install\". Do not go further and follow the instructions on this [link](https://lists.debian.org/debian-user/2017/06/msg00943.html).
 
 ###  The Debian 9 installation process
 Just make your own choices on those steps that I don\'t describe. Example just make your own choices for partitioning your discs. For myself I just used the default values on this point.
@@ -120,3 +130,22 @@ One of the big reasons that I switched from Windows to Linux. It\'s because you 
 | <kbd>Super+x</kbd> | Bring up the system log out section          |
 
 For more keyboard shortcuts you can look inside the file [keyboard-shortcuts/my-shortcuts.xml](./keyboard-shortcuts/my-shortcuts.xml)
+
+
+## My experience with different Linux distros
+I have tried out different Linux distros in this order:
+
+### [Ubuntu](https://ubuntu.com/) 16.. With [GNOME](https://www.gnome.org/) desktop
+It was easy to install and quite stable. I liked the desktop environment. Easy to use and smart solutions. The drawback of the gnome desktop, It was quite heavy for my old computer. But at all not as heavy as Windows 10. I can recommend Ubuntu if you have quite a good computer.
+
+### [LUbuntu](https://lubuntu.net/) 18.. With [LXQT](https://lxqt.org/) desktop
+WOOOOW lubuntu turned my computer to a super computer. Lightning-fast. At first glance I really liked this speed and the system has all you need. Easy to configure with no problems. The drawback with lubuntu is that it is unstable. Crashes often. Sometimes thing doesn\'t behave like expected. Maybe I try lubuntu another time and hope for some fixes.
+
+### [Debian](https://www.debian.org/) 9.9 With [LXDE](https://lxde.org/) desktop
+This lxde desktop is quite fast but not as fast as lubuntu. Debian is rock solid. I have used it quite a while by now, and it never crashes. Things behave like expected. Drawbacks with Debian: It is more complicated to install than the other Linux distros I have tried. Debian comes with a quite minimal configuration. You have to do a lot of things yourself with the config (the post-installation scripts takes care of that configuration). Another thing with Debian is that is based on well tested code base. The newest hottest thing is not inside Debian. I think Debian is not the first Linux distro you try out. When you have a little bit of experience then try it out.
+
+## How to test the post-installation script([install.sh](./install.sh))
+In the file [test.sh](./test.sh), the minimum configuration is set up for testing all parts in the [install.sh](./install.sh) script. Just copy chunks of code and paste it inside the test script([test.sh](./test.sh)). The code you will test, execute it like this:
+```sh
+./test.sh
+```
