@@ -14,6 +14,7 @@ export PATH=/snap/bin:$PATH
 
 
 
+source $USR_CUSTOM_SCRIPTS/functions.sh
 source $USR_CUSTOM_SCRIPTS/variables-user.sh
 
 ###########################################################################################
@@ -23,6 +24,7 @@ source $USR_CUSTOM_SCRIPTS/variables-user.sh
 
 # This is an example test of output of variables declared in variables-user.sh
 # witch is sourced abowe the #### line
+pretty_print_heading declaring variables and do initial preparations
 echo $EMAIL
 echo $GIT_USERNAME
 echo $DOWNLOAD_FOLDER

@@ -12,24 +12,8 @@
 #
 
 
-# Manually configuration
-
-# Configure vscode sync extention 
 
 
-
-# Function for introdusing different sections in this script
-pretty_print_heading()
-{
-    # shift; shift;
-    # Having shifted twice, the rest is now comments ...
-    COMMENTS=$@
-
-    printf "\n\n\n\n\n\n\n\n\n\n\n"
-    yes "________________________________________________________________________" | head -n 5
-    printf "\n====>  $COMMENTS ...\n"
-    yes "________________________________________________________________________" | head -n 5
-}
 
 
 
@@ -65,7 +49,8 @@ cp $USR_CUSTOM_SCRIPTS/config-files/.bash_profile $HOME/.xsessionrc
 
 
 
-
+# include my functions
+source $USR_CUSTOM_SCRIPTS/functions.sh
 
 #### User Variables ####
 
