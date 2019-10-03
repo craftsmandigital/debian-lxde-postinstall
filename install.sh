@@ -320,6 +320,23 @@ sudo dpkg -i $DOWNLOAD_FOLDER/pandoc-2.7.3-1-amd64.deb
 
 sudo apt-get install -f -y
 sudo apt-get -y update
+
+
+pretty_print_heading Install Typora
+# or run:
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+# add Typora's repository
+sudo add-apt-repository 'deb https://typora.io/linux ./'
+sudo apt-get update
+# install typora
+sudo apt-get install typora
+
+
+
+
+
+
 # sudo apt-get install -y texlive-xetex
 
 
